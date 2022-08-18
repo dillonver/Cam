@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingStart="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_15"
+    android:paddingEnd="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tv_download_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下载进度："
+        android:textColor="@color/black70"
+        android:textSize="@dimen/text_small_12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/download_seek"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@id/tv_download_s"
+        app:layout_constraintEnd_toStartOf="@id/tv_seek_num"
+        app:layout_constraintStart_toEndOf="@id/tv_download_s"
+        app:layout_constraintTop_toTopOf="@id/tv_download_s" />
+
+    <TextView
+        android:id="@+id/tv_seek_num"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black70"
+        android:text="0%"
+        android:gravity="center_vertical|end"
+        android:textSize="@dimen/text_small_12sp"
+        app:layout_constraintBottom_toBottomOf="@id/download_seek"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/download_seek"
+        app:layout_constraintTop_toTopOf="@id/download_seek" />
+
+    <TextView
+        android:id="@+id/tv_download_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/black70"
+        android:textSize="@dimen/text_small_12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/download_seek" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

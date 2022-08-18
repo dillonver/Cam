@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FadingTextView">
+        <attr name="texts" format="string" />
+        <attr name="timeout" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="civ_border_width"/>
+        <attr format="color" name="civ_border_color"/>
+        <attr format="boolean" name="civ_border_overlay"/>
+        <attr format="color" name="civ_circle_background_color"/>
+    </declare-styleable>
+    <declare-styleable name="ShimmerView">
+        <attr name="reflectionColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference" />
+        <attr name="mvAnimDuration" format="integer|reference" />
+        <attr name="mvTextSize" format="dimension|reference" />
+        <attr name="mvTextColor" format="color|reference" />
+        <attr name="mvSingleLine" format="boolean" />
+        <attr name="mvFont" format="reference" />
+        <attr name="mvGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="mvDirection">
+            <enum name="bottom_to_top" value="0" />
+            <enum name="top_to_bottom" value="1" />
+            <enum name="right_to_left" value="2" />
+            <enum name="left_to_right" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="IndicatorSeekBar">
+        <attr name="isb_max" format="float" />
+        <attr name="isb_min" format="float" />
+        <attr name="isb_progress" format="float" />
+        <attr name="isb_progress_value_float" format="boolean" />
+        <attr name="isb_seek_smoothly" format="boolean" />
+        <attr name="isb_r2l" format="boolean" />
+        <attr name="isb_ticks_count" format="integer" />
+        <attr name="isb_user_seekable" format="boolean" />
+        <attr name="isb_clear_default_padding" format="boolean" />
+        <attr name="isb_only_thumb_draggable" format="boolean" />
+        <attr name="isb_show_indicator">
+            <enum name="none" value="0" />
+            <enum name="circular_bubble" value="1" />
+            <enum name="rounded_rectangle" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="custom" value="4" />
+        </attr>
+        <attr name="isb_indicator_color" format="color|reference" />
+        <attr name="isb_indicator_text_color" format="color|reference" />
+        <attr name="isb_indicator_text_size" format="dimension|reference" />
+        <attr name="isb_indicator_content_layout" format="reference" />
+        <attr name="isb_indicator_top_content_layout" format="reference" />
+        <attr name="isb_track_background_size" format="dimension|reference" />
+        <attr name="isb_track_background_color" format="color|reference" />
+        <attr name="isb_track_progress_size" format="dimension|reference" />
+        <attr name="isb_track_progress_color" format="color|reference" />
+        <attr name="isb_track_rounded_corners" format="boolean" />
+        <attr name="isb_thumb_text_color" format="color|reference" />
+        <attr name="isb_show_thumb_text" format="boolean" />
+        <attr name="isb_thumb_size" format="dimension|reference" />
+        <attr name="isb_thumb_color" format="color|reference" />
+        <attr name="isb_thumb_drawable" format="reference" />
+        <attr name="isb_thumb_adjust_auto" format="boolean" />
+        <attr name="isb_tick_marks_color" format="color|reference" />
+        <attr name="isb_tick_marks_size" format="dimension|reference" />
+        <attr name="isb_tick_marks_drawable" format="reference" />
+        <attr name="isb_tick_marks_ends_hide" format="boolean" />
+        <attr name="isb_tick_marks_swept_hide" format="boolean" />
+        <attr name="isb_show_tick_marks_type">
+            <enum name="none" value="0" />
+            <enum name="oval" value="1" />
+            <enum name="square" value="2" />
+            <enum name="divider" value="3" />
+        </attr>
+        <attr name="isb_show_tick_texts" format="boolean" />
+        <attr name="isb_tick_texts_color" format="reference|color" />
+        <attr name="isb_tick_texts_size" format="dimension|reference" />
+        <attr name="isb_tick_texts_array" format="reference" />
+        <attr name="isb_tick_texts_typeface">
+            <enum name="normal" value="0" />
+            <enum name="monospace" value="1" />
+            <enum name="sans" value="2" />
+            <enum name="serif" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SmoothCheckBox">
+        <attr name="duration" format="integer"/>
+        <attr name="stroke_width" format="dimension"/>
+        <attr name="color_tick" format="color"/>
+        <attr name="color_checked" format="color"/>
+        <attr name="color_unchecked" format="color"/>
+        <attr name="color_unchecked_stroke" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="SoulPlanetsView">
+        <attr name="autoScrollMode">
+            <enum name="disable" value="0" />
+            <enum name="decelerate" value="1" />
+            <enum name="uniform" value="2" />
+        </attr>
+        <attr name="manualScroll" format="boolean" />
+        <attr name="radiusPercent" format="float" />
+        <attr name="scrollSpeed" format="float" />
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+        <attr name="startAngleX" format="float" />
+        <attr name="startAngleY" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="ElasticButton">
+        <attr format="float" name="button_scale"/>
+        <attr format="integer" name="button_duration"/>
+        <attr format="dimension" name="button_cornerRadius"/>
+    </declare-styleable>
+    <declare-styleable name="ElasticCardView">
+        <attr format="float" name="cardView_scale"/>
+        <attr format="integer" name="cardView_duration"/>
+    </declare-styleable>
+    <declare-styleable name="ElasticCheckButton">
+        <attr format="float" name="checkButton_scale"/>
+        <attr format="integer" name="checkButton_duration"/>
+        <attr format="float" name="checkButton_alpha"/>
+        <attr format="boolean" name="checkButton_isChecked"/>
+        <attr format="dimension" name="checkButton_cornerRadius"/>
+    </declare-styleable>
+    <declare-styleable name="ElasticFloatingActionButton">
+        <attr format="float" name="fabutton_scale"/>
+        <attr format="integer" name="fabutton_duration"/>
+    </declare-styleable>
+    <declare-styleable name="ElasticImageView">
+        <attr format="float" name="imageView_scale"/>
+        <attr format="integer" name="imageView_duration"/>
+    </declare-styleable>
+    <declare-styleable name="ElasticLayout">
+        <attr format="float" name="layout_scale"/>
+        <attr format="integer" name="layout_duration"/>
+        <attr format="dimension" name="layout_cornerRadius"/>
+    </declare-styleable>
+
+</resources>

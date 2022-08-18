@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/act_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_title_common" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_15"
+            android:text="@string/theme_change_tip"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_small_12sp" />
+
+        <ScrollView
+            android:id="@+id/sv_theme_item"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_home_bg"
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_200"
+                            android:background="@color/black10"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/app_bg" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/home_bg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_normal_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_1" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose_set"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_setting_bg"
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_200"
+                            android:background="@color/black10"
+                            android:scaleType="centerCrop"
+
+                            android:src="@drawable/app_bg" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/setting_bg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_normal_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dp_20">
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose_faq"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_faq_bg"
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_200"
+                            android:background="@color/black10"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/app_bg" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/param_bg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_normal_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_1" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose_pass"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_pass_bg"
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_200"
+                            android:background="@color/black10"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/app_bg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/pass_bg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_normal_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dp_20">
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose_chat"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_chat_bg"
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_200"
+                            android:background="@color/black10"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/app_bg" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/chat_bg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_normal_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_200"
+                            android:background="@color/black10"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_round_add_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:text="密码页背景"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_normal_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+</FrameLayout>
+

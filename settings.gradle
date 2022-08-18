@@ -1,0 +1,19 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+//        maven { url "https://dl.bintray.com/tencentqcloudterminal/maven" }
+//        maven{
+//            allowInsecureProtocol = true
+//            url "http://maven.aliyun.com/nexus/content/groups/public/"}
+        maven { url "https://maven.aliyun.com/repository/public" }
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+include ':cam'
+include ':mdialog'
+include ':mlist'
+include ':mvideo'
+rootProject.name='Cam'

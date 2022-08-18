@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdk 33
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "com.dillon.supercam"
+        minSdkVersion 26
+        targetSdkVersion 33
+        versionCode 1000
+        versionName "10.0.0"
+        testInstrumentationRunner "androidx.test.txt.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'//or armeabi、x86
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\dcl\\Desktop\\dillonpj.keystore')
+            storePassword 'dillon'
+            keyAlias = 'dillonpj.keystore'
+            keyPassword 'dillon'
+        }
+    }
+    buildTypes {
+        release {
+            // 是否进行混淆
+            minifyEnabled true
+            //去除没有用到的资源文件，要求minifyEnabled为true才生效
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets {
+        main() {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':mdialog')
+    implementation project(':mvideo')
+    implementation project(':mlist')
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    implementation 'com.github.getActivity:XXPermissions:12.6'
+
+    //工具类
+    implementation 'com.blankj:utilcodex:1.31.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.13.1'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.1'
+
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+
+}

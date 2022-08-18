@@ -1,0 +1,26 @@
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="together">
+    <!--    <slide-->
+    <!--        android:duration="300"-->
+    <!--        android:slideEdge="left">-->
+    <!--        <targets>-->
+    <!--            <target android:excludeId="@android:id/statusBarBackground" />-->
+    <!--            <target android:excludeId="@android:id/navigationBarBackground" />-->
+    <!--            <target android:excludeId="@id/act_bg" />-->
+    <!--        </targets>-->
+    <!--    </slide>-->
+    <fade
+        android:duration="500"
+        android:fadingMode="fade_in">
+        <targets>
+            <!--            <target android:targetId="@id/photo_view" />-->
+            <target android:excludeId="@android:id/statusBarBackground" />-->
+            <target android:excludeId="@android:id/navigationBarBackground" />
+<!--            <target android:excludeId="@id/v_photo_top" />-->
+<!--            <target android:excludeId="@id/v_photo_bottom" />-->
+<!--            <target android:excludeId="@id/v_video_top" />-->
+<!--            <target android:excludeId="@id/v_video_bottom" />-->
+
+        </targets>
+    </fade>
+</transitionSet>

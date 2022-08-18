@@ -1,0 +1,24 @@
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="together">
+    <slide
+        android:duration="700"
+        android:slideEdge="left">
+        <targets>
+            <target android:excludeId="@android:id/statusBarBackground" />
+            <target android:excludeId="@android:id/navigationBarBackground" />
+            <target android:excludeId="@id/act_bg" />
+        </targets>
+    </slide>
+
+    <fade
+        android:duration="700"
+        android:fadingMode="fade_in">
+        <targets>
+<!--            <target android:targetId="@id/act_bg" />-->
+<!--            <target android:targetId="@id/lay_pay_code" />-->
+
+            <target android:excludeId="@android:id/statusBarBackground" />
+            <target android:excludeId="@android:id/navigationBarBackground" />
+        </targets>
+    </fade>
+</transitionSet>

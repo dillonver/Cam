@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_8">
+
+
+    <TextView
+        android:id="@+id/tv_msg_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_8"
+        android:text="20200202_02:02"
+        android:textColor="@color/black80"
+        android:textSize="@dimen/text_small_12sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lay_msg_self"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_msg_content_self"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:background="@drawable/msg_green_bg"
+                    android:paddingStart="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:textColor="@color/black80"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/text_normal_15sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/iv_msg_content_self"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_150"
+                    android:layout_gravity="end|center"
+                    android:paddingStart="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/ly_self_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:background="@drawable/msg_green_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_self_audio_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black80"
+                        android:textSize="@dimen/text_small_13sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_msg_content_self_record"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_18"
+                        android:rotation="-180"
+                        android:src="@drawable/ring_3" />
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tv_name_self"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:textColor="@color/black80"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/text_small_12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_msg_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/tv_name_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:textColor="@color/black80"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/text_small_12sp"
+                android:textStyle="bold" />
+
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_msg_content_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:background="@drawable/msg_white_bg"
+                    android:paddingStart="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:textColor="@color/black80"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/text_normal_15sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/iv_msg_content_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_150"
+                    android:layout_gravity="start|center"
+                    android:paddingStart="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/ly_other_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:background="@drawable/msg_green_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_5"
+                    android:paddingStart="@dimen/dp_5"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_msg_content_other_record"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_18"
+                        android:src="@drawable/ring_3" />
+
+                    <TextView
+                        android:id="@+id/tv_other_audio_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black80"
+                        android:textSize="@dimen/text_small_13sp" />
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

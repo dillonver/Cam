@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lay_whole"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/act_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_bg" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_title_chat" />
+
+        <com.dillon.supercam.utils.view.planet.view.PlanetsView
+            android:id="@+id/planetsView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:autoScrollMode="decelerate"
+            app:darkColor="#ff0000"
+            app:lightColor="#00ff00"
+            app:radiusPercent="0.75"
+            app:scrollSpeed="35" />
+
+        <com.dillon.recyclerview.SwipeRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_marginEnd="@dimen/dp_3"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/shape_chat_send_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.dillon.supercam.utils.view.elasticviews.ElasticLayout
+                android:id="@+id/lay_voice"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_45"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                app:layout_cornerRadius="4dp"
+                app:layout_duration="300"
+                app:layout_scale="0.85">
+
+                <ImageView
+                    android:id="@+id/iv_voice"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_outline_contactless_24" />
+            </com.dillon.supercam.utils.view.elasticviews.ElasticLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionSend"
+                    android:inputType="textMultiLine"
+                    android:maxLength="300"
+                    android:padding="@dimen/dp_3"
+                    android:textColor="@color/black90" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/black80" />
+            </LinearLayout>
+
+
+            <com.dillon.supercam.utils.view.elasticviews.ElasticLayout
+                android:id="@+id/lay_iv_select"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_45"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+
+                app:layout_cornerRadius="4dp"
+                app:layout_duration="300"
+                app:layout_scale="0.85">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_round_add_circle_outline_24" />
+            </com.dillon.supercam.utils.view.elasticviews.ElasticLayout>
+
+            <FrameLayout
+                android:id="@+id/lay_iv_send"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_45"
+                android:layout_gravity="bottom"
+
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_send"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_round_send_24" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

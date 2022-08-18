@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/act_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_bg"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_title_capture_set" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp_15">
+
+                <LinearLayout
+                    android:id="@+id/lay_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_secret_param"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/most_recommend"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_secret_param"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:id="@+id/lay_notification_permissions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/tv_explain_close_notification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/disable_app_notifications"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_notification_permissions"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/lay_do_not_disturb_permissions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/tv_explain_do_not_disturb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/activate_silent_shooting"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_do_not_disturb_permissions"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_capture_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/media"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_capture_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/dp_10"
+                            android:paddingEnd="@dimen/dp_10">
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_media_photo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_media_photo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/take_photo"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_media_photo"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                                <LinearLayout
+                                    android:id="@+id/lay_photo_continue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_15"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_explain_photo_continue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="@string/take_photo_continue"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+
+                                    <FrameLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_8">
+
+                                        <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                            android:id="@+id/cb_media_photo_continue"
+                                            android:layout_width="@dimen/check_box_23dp"
+                                            android:layout_height="@dimen/check_box_23dp"
+                                            android:layout_gravity="center"
+                                            android:visibility="invisible"
+                                            app:color_checked="@color/default_select" />
+
+                                        <ImageView
+                                            android:id="@+id/iv_media_photo_continue_float"
+                                            android:layout_width="@dimen/dp_20"
+                                            android:layout_height="@dimen/dp_20"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_round_lock_24" />
+                                    </FrameLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/lay_photo_continue_max"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:visibility="invisible">
+
+                                        <EditText
+                                            android:id="@+id/et_photo_interval"
+                                            android:layout_width="@dimen/dp_40"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:inputType="number"
+                                            android:maxLength="3"
+                                            android:maxLines="1"
+                                            android:paddingTop="@dimen/dp_10"
+                                            android:paddingBottom="@dimen/dp_10"
+                                            android:text="3"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/text_small_12sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:paddingTop="@dimen/dp_10"
+                                            android:paddingBottom="@dimen/dp_10"
+                                            android:text="@string/second_interval"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/text_small_12sp" />
+
+
+                                        <EditText
+                                            android:id="@+id/et_photo_count"
+                                            android:layout_width="@dimen/dp_40"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:inputType="number"
+                                            android:maxLength="2"
+                                            android:maxLines="1"
+                                            android:paddingTop="@dimen/dp_10"
+                                            android:paddingBottom="@dimen/dp_10"
+                                            android:text="5"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/text_small_12sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:paddingTop="@dimen/dp_10"
+                                            android:paddingBottom="@dimen/dp_10"
+                                            android:text="@string/num"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/text_small_12sp" />
+
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/dp_10"
+                            android:paddingEnd="@dimen/dp_10">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_media_video"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_explain_media_video"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="@string/video_record"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+
+                                    <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                        android:id="@+id/cb_media_video"
+                                        android:layout_width="@dimen/check_box_23dp"
+                                        android:layout_height="@dimen/check_box_23dp"
+                                        android:layout_marginStart="@dimen/dp_8"
+                                        app:color_checked="@color/default_select" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lay_media_video_max_dur"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+
+                                    <EditText
+                                        android:id="@+id/et_video_max_dur"
+                                        android:layout_width="@dimen/dp_40"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLength="8"
+                                        android:maxLines="1"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="100"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="@string/second"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_media_audio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_explain_media_audio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="@string/audio_record"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+
+                                    <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                        android:id="@+id/cb_media_audio"
+                                        android:layout_width="@dimen/check_box_23dp"
+                                        android:layout_height="@dimen/check_box_23dp"
+                                        android:layout_marginStart="@dimen/dp_8"
+                                        app:color_checked="@color/default_select" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lay_media_audio_max_dur"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+
+                                    <EditText
+                                        android:id="@+id/et_audio_max_dur"
+                                        android:layout_width="@dimen/dp_40"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLength="8"
+                                        android:maxLines="1"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="600"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/dp_10"
+                                        android:paddingBottom="@dimen/dp_10"
+                                        android:text="@string/second"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/text_small_12sp" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_smart_capture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_capture_way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/start_mode"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:id="@+id/lay_capture_way"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_screen_on"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_screen_on"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/screen_on"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_screen_on"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_screen_off"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_screen_off"
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/screen_off"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_screen_off"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_home_key"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_home_key"
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/home_key"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_home_key"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_recent_key"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_recent_key"
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/recent_key"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_recent_key"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_volume_key"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_volume_key"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/volume_key"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_8">
+
+                                    <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                        android:id="@+id/cb_volume_key"
+                                        android:layout_width="@dimen/check_box_23dp"
+                                        android:layout_height="@dimen/check_box_23dp"
+                                        app:color_checked="@color/default_select" />
+
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_2"
+                                    android:gravity="center"
+                                    android:text="@string/support_headset"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_mini_9sp" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_camera_param"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/camera"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_camera_param"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/dp_10"
+                            android:paddingEnd="@dimen/dp_10">
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_front_camera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_front_camera"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/facing_front"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_front_camera"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lay_back_camera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_25"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_explain_back_camera"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/facing_back"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_back_camera"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyCameraParams"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/dp_10"
+                            android:paddingEnd="@dimen/dp_10">
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_size_1080p"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/size_1080p"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_size_1080p"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lay_size_2k"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/size_2k"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                    android:id="@+id/cb_size_2k"
+                                    android:layout_width="@dimen/check_box_23dp"
+                                    android:layout_height="@dimen/check_box_23dp"
+                                    android:layout_marginStart="@dimen/dp_8"
+                                    app:color_checked="@color/default_select" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_size_4k"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/size_4k"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_8">
+
+                                    <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                        android:id="@+id/cb_size_4k"
+                                        android:layout_width="@dimen/check_box_23dp"
+                                        android:layout_height="@dimen/check_box_23dp"
+                                        android:layout_gravity="center"
+                                        app:color_checked="@color/default_select" />
+
+
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/lay_size_best"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/size_best"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_8">
+
+                                    <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                        android:id="@+id/cb_size_best"
+                                        android:layout_width="@dimen/check_box_23dp"
+                                        android:layout_height="@dimen/check_box_23dp"
+                                        android:layout_gravity="center"
+                                        app:color_checked="@color/default_select" />
+
+
+                                </FrameLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_remind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/tv_remind_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/remind"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_remind_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_10">
+
+
+                        <LinearLayout
+                            android:id="@+id/lay_remind_none"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_explain_remind_none"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/remind_none"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_remind_none"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_remind_start"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_explain_remind_start"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/remind_start"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_remind_start"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_remind_stop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_explain_remind_stop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/remind_stop"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_remind_stop"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_remind_both"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_explain_remind_both"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/remind_both"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_remind_both"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_ring_recover"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_idle_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/idle_state"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_idle_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_explain_recover_silent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/silent"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_recover_silent"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_marginEnd="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_explain_recover_vibrate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/vibrate"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_recover_vibrate"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_marginEnd="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_explain_recover_sound"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/sound"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_recover_sound"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_marginEnd="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_timer_capture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_timer_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_8"
+                        android:text="@string/time_start"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_small_12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_timer_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@drawable/item_white_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_10"
+                        android:paddingEnd="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_explain_task_capture_single"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/single"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_task_capture_single"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_marginEnd="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                            <LinearLayout
+                                android:id="@+id/lay_task_detail_capture_single"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/et_task_hour_capture_single"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="8"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="00"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text=":"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <EditText
+                                    android:id="@+id/et_task_min_capture_single"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="00"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_explain_task_capture_hourly"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/Hourly"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_task_capture_hourly"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_marginEnd="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                            <LinearLayout
+                                android:id="@+id/lay_task_detail_capture_hourly"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/et_task_hour_capture_hourly"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="8"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="00"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text=":"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <EditText
+                                    android:id="@+id/et_task_min_capture_hourly"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="00"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_explain_task_capture_daily"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="@string/Daily"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_small_12sp" />
+
+                            <com.dillon.supercam.utils.view.checkbox.SmoothCheckBox
+                                android:id="@+id/cb_task_capture_daily"
+                                android:layout_width="@dimen/check_box_23dp"
+                                android:layout_height="@dimen/check_box_23dp"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_marginEnd="@dimen/dp_8"
+                                app:color_checked="@color/default_select" />
+
+                            <LinearLayout
+                                android:id="@+id/lay_task_detail_capture_daily"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/et_task_hour_capture_daily"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="8"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="00"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text=":"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+                                <EditText
+                                    android:id="@+id/et_task_min_capture_daily"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/dp_10"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="00"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_small_12sp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/ad_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+    </LinearLayout>
+
+
+</FrameLayout>
+

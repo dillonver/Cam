@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dillon.supercam">
+
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:name=".base.App"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_logo"
+        android:roundIcon="@drawable/ic_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="false"
+        tools:replace="android:allowBackup">
+        <meta-data android:name="ScopedStorage" android:value="true" />
+        <meta-data
+            android:name=".utils.glide.GeneratedAppGlideModule"
+            android:value="AppGlideModule" />
+
+        <service android:name=".services.ASer" />
+        <service android:name=".services.ASerP" />
+        <service android:name=".services.task.CoreSer" />
+        <service android:name=".services.task.CheckDrawOverlaySer" />
+        <service android:name=".services.task.CheckNotificationsSer" />
+        <service android:name=".services.task.CheckDisturbSer" />
+        <service android:name=".services.task.CapturePhotoSer" />
+        <service android:name=".services.task.CaptureVideoSer" />
+        <service android:name=".services.task.CaptureAudioSer" />
+        <service android:name=".services.task.CapturePhotoIntervalSer" />
+        <service android:name=".services.task.CheckFreeRecoverSer" />
+        <service android:name=".services.task.TestSer" />
+        <service android:name=".services.task.CaptureAllStopSer" />
+        <service android:name=".services.task.CheckCanInstallSer" />
+
+
+        <activity android:name=".test.TestAct" />
+        <activity
+            android:name=".WelcomeAct"
+            android:exported="true"
+            android:icon="@drawable/ic_logo"
+            android:roundIcon="@drawable/ic_logo"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".WelcomeAct"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:targetActivity=".WelcomeAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name=".WelcomeActFake"
+            android:exported="true"
+            android:label="@string/app_name_hide" />
+        <activity-alias
+            android:name=".WelcomeActFake"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_logo_hide"
+            android:roundIcon="@drawable/ic_logo_hide"
+            android:label="@string/app_name_hide"
+            android:targetActivity=".WelcomeActFake">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name=".ui.home.HomeAct"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateUnspecified|adjustPan" />
+        <activity
+            android:name=".ui.setting.PasswordAct"
+            android:exported="true"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".ui.setting.ThemeAct"
+            android:exported="true"
+            android:launchMode="singleTask" />
+
+
+        <activity
+            android:name=".ui.room.RoomAct"
+            android:exported="true"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".utils.picture.PictureSelectActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/TranslucentFullscreen" />
+
+        <activity
+            android:name=".ui.shortcut.OnePxAct"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".ui.home.MediaShowAct"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".WelcomeActShortCut"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.setting.CaptureSetAct"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.setting.SettingsAct"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.setting.AppInstructionsAct"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ui.setting.AppAboutAct"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ui.setting.SpecialSetAct"
+            android:launchMode="singleTask" />
+
+
+        <receiver
+            android:name=".receivers.ARec"
+            android:enabled="true"
+            android:exported="true"
+            android:priority="2147483647">
+            <intent-filter>
+
+                <!-- 开机广播 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- 关机广播 -->
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- 解锁广播 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+
+        </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

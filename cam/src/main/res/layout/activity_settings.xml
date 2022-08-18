@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+
+    <ImageView
+        android:id="@+id/act_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_bg"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_title_left"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_30"
+        android:padding="@dimen/dp_15"
+        android:src="@drawable/ic_round_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.dillon.supercam.utils.view.shimmer.ShimmerTextView
+        android:id="@+id/tv_title_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/dp_15"
+        android:text="设置"
+        android:textColor="@color/black70"
+        android:textSize="@dimen/text_big_18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_title_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_title_left"
+        app:reflectionColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/dp_10"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lay_app_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_white_bg"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_app_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="@dimen/dp_10"
+                    android:text="当前状态"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/text_normal_15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_app_status_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_app_status"
+                    app:layout_constraintStart_toEndOf="@id/tv_app_status"
+                    app:layout_constraintTop_toTopOf="@id/tv_app_status" />
+
+                <TextView
+                    android:id="@+id/tv_app_status_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="@dimen/dp_10"
+                    android:textSize="@dimen/text_small_12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_app_status"
+                    app:layout_constraintStart_toEndOf="@id/iv_app_status_dot"
+                    app:layout_constraintTop_toTopOf="@id/tv_app_status" />
+
+                <TextView
+                    android:id="@+id/tv_repair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="@dimen/dp_10"
+                    android:text="修复"
+                    android:textColor="@color/red_normal"
+                    android:textSize="@dimen/text_small_12sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_app_status"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_app_status" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_act_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/item_white_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lay_app_status">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/act_code"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/text_normal_15sp" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_special_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/item_white_bg"
+                android:gravity="start"
+                android:padding="@dimen/dp_10"
+                android:text="特殊配置"
+                android:textColor="@color/black70"
+                android:textSize="@dimen/text_normal_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lay_act_code" />
+
+            <TextView
+                android:id="@+id/tv_capture_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_white_bg"
+                android:gravity="start"
+                android:padding="@dimen/dp_10"
+                android:text="捕获参数"
+                android:textColor="@color/black70"
+                android:textSize="@dimen/text_normal_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_special_set" />
+
+            <LinearLayout
+                android:id="@+id/lay_theme_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_white_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_capture_set">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="背景主题"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/text_normal_15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dp_5"
+                    android:visibility="gone"
+                    android:text="（支持动态图）"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/text_small_12sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_app_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/item_white_bg"
+                android:gravity="start"
+                android:padding="@dimen/dp_10"
+                android:text="使用说明"
+                android:textColor="@color/black70"
+                android:textSize="@dimen/text_normal_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lay_theme_set" />
+
+            <TextView
+                android:id="@+id/tv_suggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_white_bg"
+                android:gravity="start"
+                android:padding="@dimen/dp_10"
+                android:text="建议反馈"
+                android:visibility="gone"
+                android:textColor="@color/black70"
+                android:textSize="@dimen/text_normal_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_app_instructions" />
+
+            <TextView
+                android:id="@+id/tv_app_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_white_bg"
+                android:gravity="start"
+                android:padding="@dimen/dp_10"
+                android:text="关于应用"
+                android:textColor="@color/black70"
+                android:textSize="@dimen/text_normal_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_suggestion" />
+
+            <TextView
+                android:id="@+id/tv_app_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:text="@string/find_new_ver"
+                android:textColor="@color/red_packet_button"
+                android:textSize="@dimen/text_small_12sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/tv_app_about"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_app_about" />
+
+            <TextView
+                android:id="@+id/tv_exit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@drawable/item_white_bg"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="退出登录"
+                android:textColor="@color/black70"
+                android:textSize="@dimen/text_normal_15sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_app_about" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
